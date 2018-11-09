@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action='1.py' method='get'>
+        <!-- 输入框 -->
+        <p>用户姓名:
+        <input type='text' name='username' placeholder="请输入不超过6位用户名" maxlength="6" autocomplete="off">
+        </p>
+        <p>用户密码:
+        <input type='password' name='upwd'>
+        </p>
+        <p>
+            用户性别:
+            <input type='radio' name='gender' value='male' checked id="male"><label for='male'>男</label>
+            <input type='radio' name='gender' value='female'id='female'> <label for='female'>女</label>
+
+        </p>
+        <p>
+            用户爱好:
+            <input type='checkbox' name='hobby' value='smoke' checked >抽烟
+            <input type='checkbox' name='hobby' value='drink'>喝酒
+            <input type='checkbox' name='hobby' value='perm'>烫头
+        </p>
+        <p>
+            <input type='hidden' name ='uid' value='007' >       
+        </p>
+        <p>
+            选择文件:
+            <input type='file' name='ufile'>
+        </p>
+        <p>选择城市
+            <select name ='address'>
+                <option value='beijing'>北京</option>
+                <option value='shanghai'>上海</option>
+                <option value='geliaogou' selected>圪僚沟</option>
+
+            </select>
+        </p>
+        <p>
+            用户介绍:
+            <textarea name ='uinfo' cols='20' rows='10'></textarea>
+        </p>
+        <p>
+            <input type='reset' value='重置'>
+            <input type='submit' value='提交'>
+            <input type='button' value='按钮'>
+        </p>
+        <p>
+            <button>button</button>
+        </p>
+    </form>
+    
+</body>
+</html>
