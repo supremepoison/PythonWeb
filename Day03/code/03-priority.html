@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			div{
+				color: red;
+				font-size: 100px;
+			}
+			/* 2.元素样式与继承样式之间的优先级 */
+			h1{
+				color: green;
+			}
+			/* 3.不同引入方式之间,元素自身样式的优先级 */
+			h1{
+				color:blue;
+			}
+			
+		</style>
+		<link rel="stylesheet" href="03.css" />
+
+	</head>
+	<body>
+		<!-- 1.浏览器默认样式与继承样式之间的优先级 -->
+		<div>
+			<h1 style='color: #FF0000;'>Level 1 title</h1>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>增加管理员</h1>
+    <form action='' method='get'>
+        <table>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="uname" maxlength="10"</td>
+                <td>Less than 10 chatacters</td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="text" name="upwd" maxlength="10"></td>
+                <td>Less than 10 chatacters</td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td colspan="2"> 
+                    <input type='radio' name="sex" id="male"><label for="male">Male </label>
+                    <input type='radio' name="sex" id="female"><label for="female">Female</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Role</td>
+                <td>
+                    <input type='checkbox' name='admit' value='superadmit'>Super administrator<br>
+                    <input type='checkbox' name="admit" value='billadmit'>Bill administrator
+                </td>
+                <td>Choose at least one role</td>
+            </tr>
+            <tr>
+                <td>Image:</td>
+                <td>
+                    <input type="file" name="uimg">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <input type="button" value="Submit">
+                    <input type="reset"  value='Reset'>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
