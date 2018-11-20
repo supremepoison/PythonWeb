@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//1.创建正则表达式
+			var reg1 = /microsoft/ig;
+			var reg2 = /\d{6}/ig;
+			var reg3 = new RegExp('\\d{6}','ig');
+			
+			//定义字符串
+			var s1 = 'hello123456789';
+			var r1 = reg2.test(s1);
+			//访问属性,lastindex 指定下一次匹配的起始位置
+			console.log(r1,reg2.lastIndex);
+			//强制修改lastindex 
+			reg2.lastIndex = 0;
+			var r2 = reg2.test(s1);
+			console.log(r2,reg2.lastIndex);
+		</script>
+	</body>
+</html>

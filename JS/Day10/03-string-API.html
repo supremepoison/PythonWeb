@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//获取字符或字符编码
+			var s1 = 'hello';
+			var s2 = 'Hello 小明';
+			var r1 = s1.charAt(0);
+			var r2 = s1.charCodeAt();
+			console.log(r1,r2);
+			var res1 = s2.charAt(6);
+			var res2 = s2.charCodeAt(6);
+			//中文在计算机中以十六进制存储
+			var res2 = res2.toString(16);
+			res2 = '\u5c0f';
+			console.log(res1,res2);
+			
+			//------检索字符串-------
+			var s3 = 'hello world';
+			var ind1 = s3.indexOf('l');
+			var ind2 = s3.indexOf('l',5);
+
+			console.log(ind1,ind2);
+			
+			var ind3 = s3.lastIndexOf('l',5);
+			var ind4 = s3.lastIndexOf('l');
+
+			console.log(ind3,ind4);
+			
+			//截取字符串
+			var s4 = '2018-11-11';
+			var result = s4.substring(0,4);
+			console.log(result);
+		</script>
+	</body>
+</html>

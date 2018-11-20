@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//1.穿件日期对象
+			//根据系统当前的时间初始化对象
+			var date1 =new Date();
+			 //根据指定的时间初始化对象
+			var date2 = new Date('2018-11-11');
+			console.log(date1,date2);
+			//2.获取当前时间毫秒数
+			var dat3  = date1.getTime()
+			console.log(dat3);
+			//获取时间分量
+			var year = date1.getFullYear();
+			var month = date1.getMonth();
+			var day = date1.getDate();
+			var week = date1.getDay();
+			console.log(year,month+1,day,week);
+			//获取时分秒
+			
+			var hour = date1.getHours();
+			var minute = date1.getMinutes();
+			var second = date1.getSeconds();
+			var millisecond = date1.getMilliseconds();
+			console.log(hour,minute,second,millisecond,typeof hour);
+			
+			//输出日期字符串
+			console.log(date1);
+			console.log(date1.toString());
+			console.log(date1.toLocaleString());
+			console.log(date1.toLocaleDateString());
+			console.log(date1.toLocaleTimeString());
+
+
+
+
+			
+		</script>
+	</body>
+</html>

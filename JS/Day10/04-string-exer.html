@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//提取邮箱中用户名和服务商
+			var mail = 'zhangsan@163.com';
+			var atIndex = mail.indexOf('@');
+			var uname = mail.substring(0,atIndex);
+			//省略结束下标,截止末尾
+			
+			var server = mail.substring(atIndex+1)
+			console.log(uname,server)
+		</script>
+	</body>
+</html>
