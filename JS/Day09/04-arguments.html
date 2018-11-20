@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+	<script>
+		//JS 中允许形参与实参个数不匹配
+		function f1 (a){
+			console.log(a);
+			//arguments只能在函数内部使用
+			console.log(arguments);
+		}
+		f1(100,200);
+		function f2(){
+			console.log(arguments);
+		}
+		f2(1000);
+	
+	</script>
+ </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//1.算术运算符
+			var r1 = 100 - 10;
+			var r2 = '100' - 10;
+			console.log(r1,r2,typeof r2);
+			
+			//Number('100a') - > NaN
+			var r3 = '100a' - 10;
+			console.log(r3);
+			var r4 = '100' - true;
+			console.log(r4);
+			
+			var res1 = 5 / 2;
+			var res = 5 % 2;
+			console.log(res1,res);
+			
+			//与其他运算符结合使用
+			var n2 = 10;
+			var result1 = n2++;
+			console.log(result1,n2)
+			
+			var result2 = ++n2;
+			console.log(result2,n2)
+			
+			var n = 5;
+			var res = n++ + ++n + n++ + ++n + n;
+			console.log(res);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script>
+	//创建数组
+	var arr1 = [10,20,30];
+	var arr2 = new Array(100,200,300);
+	console.log(arr1,arr2);
+	//长度为5的数组
+	var arr3 = new Array(5);
+	console.log(arr3);
+	//为数组中添加元素,或修改元素
+	arr3[0] = "a";
+	arr3[10] = "abc";
+	//修改指定位置的元素
+	arr3[0] = 111;
+	console.log(arr3);
+	console.log(arr3.length);
+
+	//遍历数组
+	//1. 普通for循环
+	//2. for - in 快速for循环
+	for(var key in arr1){
+		//获取数组元素下标
+		console.log(key);
+	}
+	//3. forEach() 方法可以遍历数组获取元素
+	arr1.forEach(function (element,index){
+		console.log(element,index);
+	});
+
+
+
+
+
+
+
+
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

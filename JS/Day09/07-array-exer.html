@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+	<script>
+		//添加数据
+		function addData(){
+			//定义空数组,保存最终的数据
+			var arr = [];
+			//循环录入
+			while(true){
+				var input = prompt("请输入数据");
+				if(input == "exit"){
+					//退出循环
+					break;
+				}
+				//保存到数组
+				arr[arr.length] = input;
+			}
+			console.log(arr);
+		}
+		
+		//输出数组最大值
+		function maxData(){
+			var arr = [10,23,43,6,8,1,-123,678,2];
+			//定义变量,保存最大值
+			var max = arr[0]; //必须是数组中存在元素
+			//遍历数组
+			for(var i = 0;i < arr.length; i ++){
+				if(arr[i] > max){
+					max = arr[i];
+				}
+			}
+			//输出最大值
+			console.log(max);
+		}
+
+		//数组排序
+		function sortArr(){
+			var arr = [67,128,34];
+			//1. 比较前两个数据
+			if(arr[0] > arr[1]){
+				//互换位置
+				arr[0] = arr[0] ^ arr[1];
+				arr[1] = arr[0] ^ arr[1];
+				arr[0] = arr[0] ^ arr[1];
+			}
+			//2. 比较后两个数据
+			if(arr[1] > arr[2]){
+				//互换位置
+				arr[1] = arr[1] ^ arr[2];
+				arr[2] = arr[1] ^ arr[2];
+				arr[1] = arr[1] ^ arr[2];
+			}
+			//3. 比较前两个数据
+			if(arr[0] > arr[1]){
+				//互换位置
+				arr[0] = arr[0] ^ arr[1];
+				arr[1] = arr[0] ^ arr[1];
+				arr[0] = arr[0] ^ arr[1];
+			}
+			//输出数组
+			console.log(arr);
+		}
+
+
+	</script>
+
+	<button onclick="addData()">点击输入</button>
+	<button onclick="maxData()">获取最大值</button>
+	<button onclick="sortArr()">排序</button>
+ </body>
+</html>

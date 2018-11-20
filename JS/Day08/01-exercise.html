@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- <script type="text/javascript">
+			var a = prompt('输入年份');
+			var b = Number(a);
+			var c = b % 400  == 0 || (a % 4 == 0 && a % 100 != 0);
+			console.log(c);
+		</script> -->
+		
+		<script type="text/javascript">
+			var a = prompt('请输入一个字符')
+			var b = (a.charCodeAt() > 64 && a.charCodeAt() < 91) || (a.charCodeAt() > 96 && a.charCodeAt() < 123); 
+			console.log('是英文吗?',b);
+			
+			var c = Number(a);
+			var d = c >= 0 && c <=9;
+			console.log('是数字吗?',d);
+			
+			var e = a >= '\u4e00' && a<= '\u9fa5';
+			console.log('是中文吗?',e);
+		</script>
+	</body>
+</html>
+

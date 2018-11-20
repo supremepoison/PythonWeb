@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+	<script>
+		//1. 接收用户输入
+		var num = Number(prompt("请输入数字"));
+		//2. 定义空数组,保存二进制位(余数)
+		var arr = [];
+		//3. 循环除2
+		while(num != 0){
+			//保存余数
+			arr[arr.length] = num % 2;
+			//变量num保存每次除二的商,进行循环
+			num = parseInt(num / 2);
+		}
+		//4. 反转数组
+		arr.reverse();
+		//5. 输出二进制
+		console.log(arr.join(""));
+
+		function f1(){
+			console.log("hahahhaha");
+		}
+		f1();
+
+		//二维数组
+		var arr2 = [[1,2,3],[5],["10","20"]];
+		console.log(arr2[2][0]);
+		//遍历二维数组
+		for(var i = 0; i < arr2.length; i ++){
+			//保存内层数组
+			var array = arr2[i];
+			//遍历
+			for(var j = 0; j < array.length; j ++){
+				console.log(array[j]);
+			}
+		}
+
+
+	</script>
+ </body>
+</html>

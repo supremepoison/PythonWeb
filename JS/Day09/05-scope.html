@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+	<script>
+		//函数外部任何地方定义的变量,都是全局变量
+		var a = 100;
+		console.log(a);
+		function f1(){
+			console.log("函数内部访问全局变量 :" + a);
+		}
+		f1();
+		//只在函数作用域中起作用的变量,是局部变量
+		function f2(){
+			var b = 200;
+			console.log("函数内部局部变量 :"+b);
+		}
+		f2();
+
+		function f3(){
+			//省略关键字var,创建的变量都是全局变量
+			c = 300;
+			console.log("函数内部访问变量 c" + c);
+		}
+		f3();
+		console.log(c);
+
+		function f4(){
+			//var a = 1000;
+			console.log("函数内部访问变量a" + a);
+		}
+		f4();
+		console.log("外部访问变量a"+a);
+		
+		
+
+
+
+
+	</script>
+ </body>
+</html>

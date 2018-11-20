@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//创建字符串变量
+			var str1 = '100';
+			var str2 = 'abc';
+			var str3 = 'ABC';		
+			var code1 = str1.charCodeAt(0);
+			var code2 = str2.charCodeAt();
+			var code3 = str3.charCodeAt();
+			console.log(code1,code2,code3);
+			
+			var str4 = '张三丰';
+			console.log(str4.charCodeAt(0));
+			//中文Unicode码转16进制
+			
+			var code4 = str4.charCodeAt(0);
+			//转换十六进制的字符串表示
+			
+			var zhCode = code4.toString(16);
+			console.log(zhCode);
+			//十六进制字符串转中文
+			
+			var str5 = '\u5f20';
+			console.log(str5);
+			
+			//中文范围
+			var s1 = '\u4e00';
+			var s2 = '\u9fa5';
+			console.log(s1,s2);
+			
+			var b1 = true;
+			console.log(typeof b1,typeof s1);
+			</script>
+	</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+	
+	//输出1-100之间的素数
+	for(var i = 2; i < 101; i ++){
+		//标识i是否为素数
+		var isSu = true;
+		//素数只能被1和自身整除,在(2 ~ i-1)之间不能出现其他除数
+		for(var j = 2; j < i; j ++){
+			if(i % j == 0){
+				isSu = false;
+			}
+		}
+		//根据标识决定输出素数
+		if(isSu){
+			console.log(i);
+		}
+	}
+	//----------------图案-------------------
+	//外层循环,控制行数
+	for(var i = 1; i < 6; i ++){
+		var show = "";
+		//空格数 逐行递减
+		for(var j = 5-i; j > 0;j--){ //4-1 
+			show += " ";
+		}
+		//星星数 逐行递增
+		for(var k = 1; k <= 2 * i - 1; k ++){
+			show += "*";
+		}		
+		//输出当前行
+		console.log(show);
+	}
+	//99乘法表
+	for(var i = 1; i <= 9; i ++){ //操作数
+		var show = "";
+		for(var j = 1; j <= i; j ++){//第二个操作数
+			show += j + '*' + i + '=' + i*j+"\t";
+		}
+		console.log(show);
+	}
+
+
+
+
+
+  </script>
+ </body>
+</html>

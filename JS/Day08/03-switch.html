@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var input = prompt('请输入0-6之间的整数')
+			//0-6 周日-周六
+			switch(input){
+				case '0':
+					console.log('周日');
+					break;
+				case '1':
+					console.log('周一');
+					break;
+				case '2':
+					console.log('周二');
+					break;
+				case '3':
+					console.log('周3');
+					break;
+				case '4':
+					console.log('周4');
+					break;
+				case '5':
+					console.log('周5');
+					break;
+				case '6':
+					console.log('周6');
+					break;
+				default:
+					console.log('请输入合法的值');
+			}
+			//求和
+			//省略break,会从当前匹配case开始向后执行所有代码
+			var sum = 0;
+			switch(input){
+				case '6':
+					sum += 6;
+				case '5':
+					sum +=5;
+				case '4':
+					sum +=4;
+				case '3':
+					sum +=3;
+				case '2':
+					sum+=2;
+				case '1':
+					sum +=1;
+				case '0':
+					sum +=0;
+					break;
+				default:
+					console.log('请输入合发值');
+					// break;
+			}
+			console.log(sum);
+			
+			switch(input){
+				case '0':
+				case '2':
+				case '4':
+				case '6':
+					console.log('输入的是偶数');
+					break;
+				case '1':
+				case '3':
+				case '5':
+					console.log('输入的奇数');
+					break;
+				default:
+					console.log('请输入合法值');
+				
+			}
+			
+		</script>
+	</body>
+</html>

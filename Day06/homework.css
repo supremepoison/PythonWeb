@@ -45,4 +45,78 @@ h2{
 }
 .right{
 	float: right;
+	margin-top: 30px;
+	marigin-right:47px;
+}
+
+.form-line>p{
+	float: left;
+	width: 64px;
+	height: 40px;
+	text-align: right;
+	line-height: 40px;
+	color: #a8a6a4;
+	margin-right: 30px;
+	}
+	
+.form-control{
+	box-sizing: border-box;
+	width: 300px;
+	height: 40px;
+	border: 1px solid #CCC;
+	outline: none;
+	font-size:16px;
+	padding-left: 10px;
+}
+/* 行之间的距离 */
+.form-line{
+	margin-bottom: 30px;
+	
+}
+/* box-sizing:
+	调整元素最终尺寸的计算方式
+	默认 content-box(标准计算方式,依次相加)
+	border-box:
+		元素width/height属性指定的是包含边框在内的区域大小
+		width=border + padding + content
+		最终在文档中的尺寸:
+			margin + width*/
+
+.isSave{
+	color: #999;
+}		
+.isSave>p{
+	float: right;
+}
+
+.isSave>input{
+	width:18px;
+	height: 18px;
+	vertical-align: middle;
+}
+
+.isSave a{
+	color:#999;
+}
+
+/* 第四行 */
+
+.btn{
+	width: 145px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	border: 1px solid #64A131;
+	background: #64A131;
+	color: white;
+	border-radius: 5px;
+	font-size: 20px;
+	box-sizing: border-box;
+}
+.registBtn{
+	background: white;
+	color: #64A131;
+	margin-left: 10px;
+	text-decoration: none;
+	display: inline-block;
 }

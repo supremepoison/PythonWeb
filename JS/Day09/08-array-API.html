@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+	<script>
+		var arr = [10,20,30,40,50];
+		//1. toString() 返回字符串
+		var str1 = arr.toString();
+		console.log(str1);
+
+		//2. join() 返回字符串
+		var str2 = arr.join();
+		console.log(str2);
+		//指定元素之间的连接符,默认为逗号
+		var str3 = arr.join("");
+		console.log(str3);
+
+		//3. reverse()
+		var res = arr.reverse();
+		console.log(res,arr);
+
+		//4. sort()
+		var arr2 = [2,10,51,5,55];
+		arr2.sort();//[10,2,5,51,55]
+		console.log(arr2);
+
+		//自定义排序函数
+		//对数组中元素两两比较,返回值a-b实际上指定大小关系,a-b表示升序,b-a表示降序
+		arr2.sort(function (a,b){
+			return b-a;
+		});
+		console.log(arr2);
+
+		//5. push()
+		var newlength = arr.push("hello");
+		console.log(arr,newlength);
+		newlength = arr.push("liming","lilei","张思睿");
+		console.log(arr,newlength);
+
+		//6. pop()
+		var r = arr.pop();
+		console.log(r,arr);
+
+		//7. unshift()
+		var length = arr.unshift('a','b','c');
+		console.log(length,arr);
+
+		//8. shift()
+		var r2 = arr.shift();
+		console.log(r2,arr);
+
+	</script>
+ </body>
+</html>

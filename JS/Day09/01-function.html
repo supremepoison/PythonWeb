@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+	<script>
+		//1. 无参数,无返回值的函数
+		function f1 (){
+			console.log("无参数,无返回值的函数");
+		}
+		//函数调用
+		f1();
+		//2. 有参数,无返回值
+		function f2 (a){ //函数声明时给出的是形式参数
+			console.log(a);
+		}
+		//函数调用传递实际参数
+		f2(100);
+		//3. 有参数,有返回值
+		function f3(a){
+			var res = a * a;
+			return a * a;
+		}
+		//外界使用变量接收函数返回值
+		var r = f3(20);
+		console.log(r);
+
+
+
+
+
+
+	
+	</script>
+ </body>
+</html>

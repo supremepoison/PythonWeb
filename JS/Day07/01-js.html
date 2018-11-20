@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			//标签中书写JS代码
+			//prompt('请输入出生年份')
+			document.write('文档写入')
+		</script>
+		<script src="01-index.js">
+			alert('资源引入时的标签内容');
+			
+		</script>
+	</head>
+	<body>
+		<h1 onclick="alert('点击了h1');console.log('控制台显示');">点击</h1>
+		<script type="text/javascript">
+			document.write('<h1>文档写入标签</h1>')
+		</script>
+		<p onclick="document.write('hello')">段落标签</p>
+	</body>
+</html>

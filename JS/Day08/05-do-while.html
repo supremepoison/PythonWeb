@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//1.输出1-100之间整数
+// 			var i = 101;
+// 			while(i<101){
+// 				console.log(i);
+// 				
+// 			}
+// 			do{
+// 				console.log(i);
+// 				i++;
+// 			}while(i < 101);
+
+			//2.循环用户输入的数据,并在控制台输出,直到用户输入'exit',跳出循环
+// 			do{
+// 				var a = prompt('请输入:');
+// 				console.log(a);
+// 			}while(a != 'exit');
+
+			//3.改版日期计算器
+			var year = Number(prompt('year'));
+			var month = Number(prompt('month'));
+			var date = Number(prompt('date'));
+			
+			var sum =0 ;
+			var isRun = year%4 ==0 && year % 100 != 0 || year & 400 ==0;
+			//正月累加 最多去到11个整月
+			// 1 3 5 7 8 10  ---31 天
+			// 4 6 9 11 --- 30 天
+			// 2 28/29 天
+			var i = 1;
+			while(i < month){
+				//i 取 1 ~ month -1
+				switch(i){
+					case 1:
+					case 3:
+					case 5:
+					case 7:
+					case 8:
+					case 10:
+						sum +=31;
+						break;
+					case 4:
+					case 6:
+					case 9:
+					case 11:
+						sum +=30;
+						break;
+					case 2:
+						sum += 28;
+						if(isRun){
+							sum+=1;
+							break
+						}
+					
+				}
+				i ++;
+				
+			}
+			sum +=date;
+			console.log(year +'year' + month +'month'+'date' +date+'sum:'+sum);
+			
+		</script>
+	</body>
+</html>
