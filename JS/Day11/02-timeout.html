@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button onclick="start()">开启定时器</button>
+		<button onclick="stop()">停止定时器</button>
+		<button onclick="quit()">退出</button>
+		<script>
+			function autoplay(){
+				alert('超时调用');
+			}
+			function start(){
+
+				//开启超时调用
+				timeID = setTimeout(autoplay,3000)
+			}
+			function stop(){
+				clearTimeout(timeID);
+			}
+			function windows(){
+				window.close();
+			}
+			function quit(){
+				var option  = confirm('是否退出');
+				if(option){
+					setTimeout(windows,3000);
+				}
+			}
+		</script>
+	</body>
+</html>

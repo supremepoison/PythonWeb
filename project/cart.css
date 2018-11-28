@@ -1,0 +1,242 @@
+/*清除浏览器默认样式*/
+body,h1,h2,h3,h4,h5,h6,ul,ol,p{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+/*设置页面基础样式*/
+body{
+	font:12px "微软雅黑","黑体";
+	color:#9a9a9a;
+}
+a{
+	text-decoration:none;
+	color:#9a9a9a;
+}
+a:hover{
+	color:#64a131;
+}
+/*行内块元素的垂直对齐*/
+img{
+	vertical-align:bottom;
+}
+/*外围结构标签的样式*/
+#container{
+/*div -> d1 d2 d3 d4*/
+	width:990px;
+	margin:0 auto;
+}
+/*1. 导航栏样式*/
+#nav{
+	height:30px;
+	background:#eee;
+	/*文本垂直居中*/
+	line-height:30px;
+}
+/*1.1 右侧导航*/
+.rightNav{
+/*块元素设置浮动之后,宽度由内容决定*/
+	float:right;
+}
+.rightNav>li{
+	float:left;
+	padding:0 5px;
+	/*
+	导航项分隔符实现一 :
+	border-right:1px solid black;
+	height:15px;
+	margin-top:7px;
+	line-height:15px;
+	最后一个li元素特殊处理,不需要边框
+	*/
+}
+.rightNav>li>b{
+	border-left:1px solid #9a9a9a;
+	margin-right:10px;
+}
+
+/*1.2 左侧导航*/
+.leftNav>li{
+	float:left;
+	padding-left:10px;
+}
+.leftNav u{
+/*转换为行内块元素,设置宽高为0*/
+	display:inline-block;
+	width:0;
+	height:0;
+	border:5px solid transparent;
+	border-top:5px solid black;
+	position:relative;
+	top:3px;
+}
+
+/*2. 横幅wrapper*/
+#wrapper{
+	margin:15px 0;
+/*	父元素相对定位,实现轮播图下标*/
+	position:relative;
+}
+#wrapper img{
+/*参照父元素对应属性的值,取百分比,等价于990px*/
+	width:100%;
+/*height根据宽度等比缩放*/
+}
+/*只有第一张图片显示,其他图片都隐藏 img:first-child*/
+.banner img:not(:first-child){
+	display:none;
+}
+/*轮播图下标*/
+.imgNav{
+	position:absolute;
+	/*距右距底部20px*/
+	right:20px;
+	bottom:20px;
+}
+.imgNav>li{
+	float:left;
+	margin:0 10px;
+	width:20px;
+	height:20px;
+	text-align:center;
+	line-height:20px;
+	background:grey;
+	border-radius:50%;
+	color:#fff;
+}
+.imgNav>li:first-child{
+	background:red;
+}
+
+
+
+/*3. 小图推荐*/
+#adv{
+/*	解决行内元素水平方向由于换行导致的间隙问题  : 
+	父元素设置 font-size:0
+*/
+	font-size:0;
+}
+#adv img{
+	width:240px;
+	margin-right:10px;
+}
+#adv .lastImg{
+	margin:0;
+}
+/*4. 主体信息*/
+#main{
+	margin-top:25px;
+}
+/*4.1 标题栏*/
+#main div.title{
+	height:32px;
+	background:#f3f3f3;
+	border:1px solid #e9e9e9;
+}
+#main div.title>p{
+	float:left;
+	line-height:32px;
+}
+#main .check-box{
+	width:132px;
+}
+#main .goods{
+	width:378px;
+}
+#main .price{
+	width:160px;
+	text-align:center;
+}
+#main .count{
+	width:80px;
+	text-align:center;
+}
+#main .t-sum{
+	width:140px;
+	text-align:center;
+}
+#main .action{
+	width:85px;
+	text-align:center;
+}
+/*设置复选框与文本的垂直对齐*/
+#checkall{
+	vertical-align:middle;
+}
+/*4.2 购物车内容*/
+#main div.good-content p{
+	float:left;
+}
+#main .g-item{
+	border-top:2px solid #999;
+	border-bottom:1px solid #999;
+	margin-top:20px;
+	padding:10px 0px;
+	overflow:hidden;
+}
+#main .g-item img{
+	width:80px;
+}
+/*数量增减*/
+.count a{
+	float:left;
+	width:16px;
+	height:18px;
+	text-align:center;
+	line-height:18px;
+	border:1px solid #cacbcb;
+	padding-top:1px;
+	padding-bottom:1px;
+}
+.count input{
+	float:left;
+	width:42px;
+	height:18px;
+	text-align:center;
+	border-top:1px solid #cacbcb;
+	border-bottom:1px solid #cacbcb;
+	border-left:0;
+	border-right:0;
+	padding:1px;
+	font-size:12px;
+}
+/*底部工具栏*/
+#cart-toolbar{
+	position:fixed;
+	right:0;
+	bottom:0;
+	height:50px;
+	line-height:50px;
+}
+#cart-toolbar p{
+	float:left;
+}
+#cart-toolbar span{
+	color:#e4393c;
+	font-size:16px;
+	font-weight:700;
+	margin:0 7px;
+}
+#cart-toolbar .submit-count{
+	margin:0 20px;
+}
+#cart-toolbar .submit-btn{
+	background:#e4393c;
+	width:80px;
+	text-align:center;
+	color:white;
+	font-weight:700;
+	font-size:20px;
+	margin-left:20px;
+	cursor:pointer;
+}
+
+.g-item [name="check"]{
+	vertical-align:top;
+}
+
+
+
+
+

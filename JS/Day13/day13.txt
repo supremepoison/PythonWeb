@@ -1,0 +1,202 @@
+day13
+
+1.事件对象常用属性
+	1.键盘事件对象
+		onkeydown
+			which属性:
+				获取当前按键的编码值:键盘上所有按键都对应有自己的码值(键码),
+				数字和字母的编码值与ASC对照一致,不区分大小写,统一返回大写字母的码值
+			onkeypress:
+				只有在键盘输入内容(数字,字母,字符)才会触发,键盘上的功能键(大写锁定..)不会触发
+				which属性:
+					返回按键字符对应的ASC码,区分大小写
+				key属性:
+					返回当前键位表示的字符
+	2.事件传递机制
+		1.事件传递:
+			当页面上某一个元素被点击,相关的元素都能接收到事件,可以选择是否处理
+			
+		2.事件传递机制:
+			实际上事件传递给相关元素的顺序
+			默认: 从触发元素开始逐级向外传递,冒泡传递
+			特殊: 捕获传递,事件发生后,从外向里逐级传递
+				  IE浏览器不支持捕获,默认机制为冒泡
+				  addEventListener('click',function,false);
+				  false : 冒泡传递(默认)
+				  true :  捕获传递,IE不支持
+				  
+				  
+				  
+-----------------------------------------------------------------------------------------
+jQuery
+	1.介绍:
+		jQuery是JS的工具库,通过封装原生的JS方法,简化JS操作
+		版本:
+			1.xx.xx 兼容IE6.7.8
+			2.xx.xx 不再兼容IE6.7.8
+		功能和优势:
+			1.简化DOM操作
+			2.可以直接通过选择器设置元素样式
+			3.链式调用(核心)
+			4.事件处理更加简便
+		----------------------
+			5.Ajax技术更加完善(网络请求)
+			6.提供各种插件可供使用
+			
+	2.使用:
+		1.引入jQuery文件
+			<script src = ''> </script>
+		2.使用jQuery
+			引入操作必须在代码之前,先引入,才能使用jQuery语法
+			1.jQuery对象
+				jQuery通过封装,将原生的DOM对象包装成jQuery对象
+				原生对象使用jQuery的方法,不能混用
+			2.jQuery对象以$与原生的方法区分
+			3.工厂函数 - $()
+				$是jQuery对象的标志
+				$() : 支持传递字符串参数,用于获取元素节点
+					  可以根据选择器匹配并返回元素(jQuery对象)
+			4.原生JS对象与jQuery对象互相转换
+				1.DOM 转换 JQuery对象
+					使用$()包装原生DOM对象,返回jQuery对象
+					e.g.
+						var h1 = document.getElementsByTagname('h1')[0];
+						var $h1 = $(h1);
+						
+				2.jQuery 转换 DOM 对象
+					var h1 = $('h1')[0];
+					var g1 = $('h1').get(0);
+					
+	3.分类
+
+		1. 基础选择器
+			1. id选择器
+					$("#id");
+			2. 类选择器
+					$(".className");
+			3. 标签选择器
+					$("tagName");
+			3. 群组选择器
+					$("selector1,selector2,..");
+					
+		2. 层级选择器
+			1. 后代选择器
+					$("selector1 selector2");
+			2. 子选择器
+					$("selector1>selector2");
+			3. 相邻兄弟选择器
+					$("selector1+selector2");
+					匹配紧跟在selector1后，满足selector2的元素
+					只匹配紧邻selector1的第一个兄弟元素，
+					如果紧邻的第一个兄弟元素不满足selector2,
+					就匹配失败
+
+			4. 通用兄弟选择器
+					$("selector1~selector2");
+					匹配selector1后面所有满足selector2的兄弟元素
+					
+		3. 筛选选择器
+				也叫过滤选择器，需要结合其他选择器使用
+				1. :first
+						匹配一组元素中的第一个
+						et:
+							$("p:first")
+				2. :last
+						匹配一组元素中的最后一个
+						$(selector:last);
+				3. :not
+						否定筛选,将selector匹配的元素过滤在外，
+						匹配其他元素
+						$(':not(selector1,selector2)')
+				4. :odd
+					匹配偶数行对应的元素
+					e.g.
+						$('p:odd');
+				5. :even
+					匹配奇数行对应的元素
+					e.g.
+						$('p:even');
+				6. :eq(index)
+					匹配指定下标对应的元素
+					e.g.
+						$('p:eq(2)');
+				6. :lt(index)
+					匹配下标小于index的元素
+				7. :gt(index)
+					匹配下标大于的index的元素
+					
+		4. 属性选择器
+			1. 根据属性名筛选元素
+					[attribute]
+			2. 根据属性名和属性值筛选元素
+					[attribute=value]
+			3. 匹配属性值以指定字符开头的元素
+					[attribute^=value]
+					^表示以...开头
+			4. 匹配属性值以指定字符结尾的元素
+					[attribute$=value]
+					$表示以...结尾
+			5. 匹配属性值中包含指定字符的元素
+					[attribute*=value]
+			6. 匹配属性名不等于指定属性值的元素
+					[attribute!=value]
+					
+		5.子元素过滤选择器
+			1. :first-child
+					匹配属于父元素中的第一个子元素
+			2. :last-child
+					匹配父元素中最后一个子元素
+			3. :nth-child(n)
+					匹配父元素中第n个子元素
+					
+	4. jquery操作DOM
+		1. 内容操作
+			1. html('')
+					设置或读取jquery对象中的HTML内容
+					类似于原生JS innerHTML
+			2. text('')
+					设置或读取jquery对象中的文本内容
+					类似原生JS innerText
+			3. val('')
+					设置或读取表单对象的value值
+		练习:
+			1.创建文本框,设置id属性
+			2.创建按钮,显示文本不限
+			3.创建div,实现点击按钮时,将文本框的输入内容以一级标题的形式显示在div中
+		2. 属性操作
+			1. attr()
+					读取或设置jquery对象的属性
+					et :
+						$('div').attr("id");
+						$('div').attr('class','c1');
+						console.log($('div').attr('id'));
+			2. removeAttr()
+					移除指定属性
+					et :
+						$('div').removeAttr('id');
+				
+		3. 样式操作
+			1. attr()
+				为元素添加id或class属性，对应选择器样式
+			2. addClass('className')
+				为元素的class属性赋值，匹配选择器样式
+			3. removeClass('')
+				移除指定的class属性值
+				参数可以省略，省略之后表示清空类选择器
+			4. toggleClass()
+					切换样式，给出class属性值，
+					如果元素存在指定的
+					类名，则移除，
+					不存在则添加
+			5. css()
+					设置或读取元素CSS属性
+					1. css('width')
+							读取元素的宽度
+					2. css('width',"300px")
+							设置元素的样式
+					3. css(JSON对象)
+							为元素设置一组CSS样式
+							css({
+								"color":"red",
+								"width":"300px"
+							})

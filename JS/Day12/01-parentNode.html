@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../Day11/init.js"></script>
+	</head>
+	<body>
+		<div>
+			<h1>一级元素</h1>
+			'这是div中的普通文本'
+			<span>span文本</span>
+		</div>
+		<script>
+			//获取元素
+			var h1 = tag('h1');
+			var div = tag('div');
+			var span = tag('span');
+			//获取父节点
+			console.log(h1.parentNode);
+			//获取div的子节点
+			console.log(div.childNodes);
+			//遍历子节点
+			for (var i = 0; i < div.childNodes.length; i++){
+				var child = div.childNodes[i];
+				/*
+					nodeType : 123
+					nodeName: 标签名/属性名 #text
+					nodeValue: 属性值/文本内容 null
+				*/
+			   console.log(child.nodeType,child.nodeName,child.nodeValue);
+			   //children 属性获取子节点数组,只包含元素节点,没有文本节点
+			   console.log(div.children);
+			   //--------------------------------兄弟节点
+			   console.log(h1.nextSibling);
+			   
+			   console.log(h1.nextElementSibling);
+			   //------------获取属性节点---------
+			   console.log(span.attributes);
+			   //属性节点的类型名与值
+			   console.log(span.attributes[0].nodeName);
+
+			  
+				
+			}
+		</script>
+	</body>
+</html>

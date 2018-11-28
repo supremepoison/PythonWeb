@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			table{
+				width: 600px;
+				border: 1px solid black;
+				/*边框合并*/
+				border-collapse: collapse;
+			}
+			th,td{
+				border: 1px solid black;
+				text-align: center;
+			}
+		</style>
+		<script src="init.js"></script>
+		
+	</head>
+	<body>
+		
+			商品名称<input type="text" name="gname"/>
+			商品价格<input type="text" name="gprice"/>
+			购买数量<input type="text" name="gcount"/>
+			<button onclick="add()" >增加</button>
+		
+		<table>
+			<thead>
+				<tr>
+					<th>商品名称</th>
+					<th>商品价格</th>
+					<th>购买数量</th>
+					<th>操作</th>
+
+				</tr>
+			</thead>
+			<tbody></tbody>
+			
+		</table>
+		<script>
+			//1.获取元素节点
+			function add(){
+				var gname = tag('input')[0].value;
+				var gprice = tag('input')[1].value;
+				var gcount = tag('input')[2].value;
+				var tbody = tag('tbody')[0];
+				
+				//创建行 创建单元格
+
+				
+				var tr = document.createElement('tr');
+				var tdName = document.createElement('td');
+				tdName.innerHTML = gname
+				var tdPrice = document.createElement('td');
+				tdPrice.innerHTML = gprice
+				var tdCount = document.createElement('td');
+				tdCount.innerHTML = gcount
+				var tdBtn  = document.createElement('td');
+				
+				//创建按钮
+				var updateBtn = document.createElement('button');
+				updateBtn.innerHTML = '修改';
+				var deleteBtn = document.createElement('input');
+				deleteBtn.type = 'button';
+				deleteBtn.value = '删除';
+				
+				
+				//添加按钮至单元格
+				tdBtn.appendChild(updateBtn);
+				tdBtn.appendChild(deleteBtn);
+				
+				//追加元素
+				tr.appendChild(tdName);
+				tr.appendChild(tdPrice);
+				tr.appendChild(tdCount);
+				tr.appendChild(tdBtn);
+				
+				tbody.appendChild(tr);
+				
+
+				
+
+			}
+		</script>
+	</body>
+</html>

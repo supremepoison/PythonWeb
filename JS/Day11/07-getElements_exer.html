@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div></div>
+		<input type="text">
+		<button onclick="show()">show</button>
+		<script>
+			function show(){
+				//1.获取元素
+				var div  = document.getElementsByTagName('div')[0];
+				var input  = document.getElementsByTagName('input')[0];
+				
+				div.innerHTML =  '<h1>'+input.value+'</h1>';
+
+			}
+		</script>
+	</body>
+</html>

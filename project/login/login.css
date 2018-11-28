@@ -1,0 +1,44 @@
+@charset 'utf-8';/*设置CSS编码方式*/
+body,h2,p{
+	margin:0;
+}
+/*1. 外部容器的样式*/
+#container{
+	width:990px;
+	margin:0 auto;
+}
+/*2. 页面标题*/
+h2{
+	font-weight:normal;
+	color:#999;
+	border-bottom:1px solid #ccc;
+	padding-bottom:20px;
+	margin: 20px auto;
+}
+/*3. 页面主体*/
+.left{
+	float:left;
+	position:relative;
+}
+.left a{
+	position:absolute;
+	width:153px;
+	height:48px;
+	text-align:center;
+	line-height:48px;
+	text-decoration:none;
+	border:1px solid #64a131;
+	border-radius:5px;
+	color:#64a131;
+	bottom:20px;
+	left:173px;	
+
+}
+
+
+
+.right{
+	float:right;
+}
+
+

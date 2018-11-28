@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="jquery-1.11.3.js"></script>
+		<script>
+			window.onload = function(){
+				//:first :last
+				$('li:first').css('color','red');
+				$('li:last').css('color','white');
+				
+				//: first-child :last-child
+				
+				$('li:first-child').css('background','orange');
+				$('li:last-child').css('background','pink');
+				//:nth-child(n) 匹配属于其父元素中的第n个子元素
+				$('li:nth-child(even)').css('font-size','24px');
+
+			}
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>卢本伟</li>
+			<li>
+				五五开
+				<ol>
+					<li>内卢本伟</li>
+					<li>内五五开</li>
+					<li>内White</li>
+					<li>内十吨屎</li>
+					
+				</ol>
+			</li>
+			<li>White</li>
+			<li>十吨屎</li>
+		</ul>
+		<ol>
+			<li>卢本伟</li>
+			<li>五五开</li>
+			<li>White</li>
+			<li>十吨屎</li>
+		</ol>
+	</body>
+</html>

@@ -1,0 +1,197 @@
+对话框:
+	1.alert(''); 警告框
+	2.prompt(''); 带有输入框的弹框,返回输入的内容(字符串)
+	3.confirm(''); 确认框,如果点击确定,返回true
+	
+
+DOM - document
+	1.DOM 中将网页内容(标签,文本,属性)封装成节点,DOM操作就是操作节点
+	2.节点类型
+		元素节点 - 标签
+		文本节点 - 文本内容
+		属性节点 - 标签属性 
+	3.获取元素节点
+		1.document.getElementsByTagName('');
+			根据标签名获取元素,返回元素数组
+		2.document.getElementById('');
+			根据ID属性值获取元素,返回元素节点
+		3.document.getElementsByclassName('');
+			根据claas属性值获取元素,返回数组
+		4.document.getElementsByName('');
+			根据name属性值获取元素,返回数组
+		封装函数,实现获取元素
+			function $(tagName){
+				var init = document.getElementsByTagName('tagName')[0];
+				return init;
+				
+			}
+			
+	4.属性和样式操作
+		属性操作:
+			setAttribute()
+			getAttribute()
+			removeAttribute()
+			点语法:
+			console.log(h1.id)
+			h1.className = '';
+			h1.id = null;
+		样式操作:
+			h1.style.CSS属性名 = '属性值';
+			注意:
+				CSS属性名 所有的连接符都改成驼峰标识
+				font-size -> fontSize
+		内容操作:
+			1.innerHTML 识别标签
+			2.innerText 不能识别标签
+			3.value 
+			
+			
+--------------------------------------------------------
+day12
+	1.元素节点的层次属性
+		基于层级关系获取节点(父子关系,兄弟关系)
+		1.parentNode
+			获取父节点(只有一个)
+		2.childNodes
+			获取所有子节点(包含文本节点:文本内容,换行)
+		3.children	
+			获取所有直接子元素(只包含元素节点,不含文本节点)
+		4.nextSibling
+			获取下一个兄弟节点
+		  nextElementSibling
+			获取下一个兄弟元素节点
+		5.previousSibling
+			获取前一个兄弟节点
+			previousElementSibling
+			获取前一个兄弟元素节点
+		6.attributes
+			获取元素所有的属性节点
+			
+	2.节点操作(创建,增加,删除)
+		动态修改网页内容
+		1.创建节点
+			创建元素节点:
+				document.createElement('标签名');
+				返回创建好的元素节点
+			创建文本节点:
+				document.createText('文本内容');
+				返回创建好的文本节点
+			属性节点可以通过点语法直接访问和设置
+				div.if = 'd1'
+			练习
+				1.创建div元素节点
+				2.设置div的id属性为Box
+				3.通过innerHTML/innerText设置div的内容
+				'动态创建的div'
+				4.控制台输出div
+				
+		2.添加节点
+			1.创建好的节点对象只有添加在网页中才能显示
+			2.涉及节点的添加,删除,都是父节点的操作
+			3.语法:
+				1.追加在父元素的末尾
+					parentNode.appendChild(node)
+					注意:
+						文本节点是元素节点的子节点,为元素添加文本内容,也可以通过appendChild()方法添加文本节点
+				2.在父元素中指定位置添加子节点
+					parentNode.insertBefore(newElem,oldElem);
+					在oldElem之前插入新节点
+					
+		
+		3.移除节点
+			语法:
+				parentnode.removeChild(elem);
+				将指定的节点对象从父元素中移除
+				
+		4.练习:
+			1.静态页面元素:
+				1.输入框 和 按钮 
+				2.表格中第一行为表头,显示当前列的名称
+				
+			2.动态添加:
+				当用户点击按钮时,将输入的商品名称,数量,价格展示在表格中
+				
+	3.事件
+		1.事件: 用户行为激发的操作
+		2.事件处理函数:
+			系统定义好的,针对用户不同的行为提供的函数
+			事件汉化由用户行为触发,浏览器自动调用
+			我们只需要实现函数,定义事件发生后需要执行的操作
+			分类:
+				所有事件函数都以 on 为前缀
+				
+				1.鼠标事件函数
+					onclick 	鼠标单击
+					ondblclick	鼠标双击
+					onmouseover	鼠标移入元素时触发
+					onmousemove	鼠标在元素中移动时不断触发
+					onmouseout	鼠标移出元素时触发
+					
+				2.文档或元素加载完毕后触发
+					onload
+					
+				3.表单控件状态改变事件
+					onfocus		元素获取焦点时触发
+					onblur		元素失去焦点时触发
+					onchange	元素内容发生改变,并且失去焦点之后触发
+					oninput		元素正在输入,value值发生变化时,触发
+					onsubmit 	点击提交按钮时触发,由form监听,触发之后,用来做数据提交前最后一步判断
+								,允许返回布尔值,true表示数据可以提交,false表示不允许发送
+					
+				4.键盘事件
+					onkeydown 	键盘按键被按下
+					onkeypress	按键按压
+					onkeyup		按键抬起
+					
+		
+		3.事件绑定方式
+			事件绑定指: 事件交由哪个元素触发
+			1.元素内联绑定
+				事件函数以标签属性的方式,绑定给元素
+				e.g.:
+					<button onclick = '点击事件触发的操作'></button>
+			2.JS中动态绑定事件
+				语法:
+					事件函数都是元素节点对象的方法
+					e.g.
+						str.split();
+						h1.onclick = function(){};
+						
+			3.W3C标准的时间监听函数
+				e.g.
+					h1.addEventListener('click',fucntion[,false]);
+				参数:
+					1.省略 'on' 前缀的事件函数名
+					2.事件触发后要执行的操作
+					3.可选参数,设置事件传递机制,默认为false
+					
+		4.this
+			this 指代函数或者方法的调用者
+			全局函数是window对象的方法,全局函数的this表示window
+	
+	4.事件对象
+		1.事件对象: 伴随着触发自动产生,包含当前事件相关的信息
+		2.获取时间对象:
+			浏览器会将时间对象以参数的形式传递给时间处理函数
+			我们只负责接收
+			e.g.
+				div.onclick= function(){
+					console.log(evt)
+				}
+				
+		3.事件对象常用属性
+			不同的事件类型,事件对象中包含的信息(属性)也不相同
+			1.evt.target 
+				触发事件的节点对象(元素)
+				
+			2.鼠标事件对象
+				1.offsetX offsetY
+					获取鼠标在元素中的坐标位置
+					以元素左上角为(0,0)点,向右,向下为正方向
+				
+				2.clientX clientY
+					获取鼠标在网页中的坐标位置
+					
+				3.screenX scrennY
+					获取鼠标在屏幕中的坐标信息
+					

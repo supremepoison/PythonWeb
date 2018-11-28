@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="jquery-1.11.3.js"></script>
+		<script>
+			window.onload = function(){
+				//1.后代选择器
+				$('div span').css('background','pink');
+				//2.子代选择器
+				$('div>span').css('color','red');
+				//3.相邻兄弟选择器
+				$('#d1+.c1').css('color','red');
+				//4.t通用兄弟选择器
+				$('#d1~.c1').css('color','green');
+				$('.c2~p').css('font-weight','bold');
+				
+			};
+		</script>
+	</head>
+	<body>
+		<h1>星期五,开心</h1>
+		<p id="d1">哈哈哈</p>
+		<p class="c2">哈哈哈</p>
+		<p class="c1">哈哈哈</p>
+		<div>
+			<h2>
+				h2标题文本
+				<span>span</span>
+			</h2>
+			<span>span</span>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button onclick="start()">开启定时器</button>
+		<button onclick="stop()">停止定时器</button>
+
+		<script>
+			function start(){
+				//间歇调用
+				timeID = setInterval(function(){
+					var date = new Date();
+					console.log(date);
+				},1000);
+				
+			}
+			function stop(){
+				clearInterval(timeID);
+				console.log(timeID);
+			}
+			
+		</script>
+	</body>
+</html>

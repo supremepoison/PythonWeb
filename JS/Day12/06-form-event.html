@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../Day11/init.js"></script>
+		<script>
+			window.onload = function(){
+				//窗口加载完毕后执行
+				var form = tag('form');
+				//文本框
+				var input = tag('input');
+				//获取span
+				var span = tag('span');
+				input.onfocus = function(){
+					console.log('获取焦点')
+				};
+				input.onblur = function(){
+					console.log('失去焦点',this.value);
+					//验证用户输入是否合法
+					if(this.value.length >= 6 && this.value.length <= 18){
+						span.innerHTML = '用户名合法';
+						this.style.border = '2px solid green';
+
+						
+					}else{
+						span.innerHTML = '用户名不合法';
+						this.style.border = '2px solid red';
+
+					}
+				};
+				input.oninput = function(){
+					//实时监听,只要输入框在焦点状态,任何字符的输入操作都会触发
+					console.log('oninput:',this.value);
+				};
+				
+				input.onchange = function(){
+					//当输入内容前后发生变化,并且元素失去焦点时触发
+					console.log('onchange: ',this.value);
+				};
+				
+			};
+		</script>
+	</head>
+	<body>
+		<form action="" method="">
+			<p>
+				用户名:
+				<input type="text" name="uname" placeholder="" maxlength=""/>
+				<span></span>
+			</p>
+			<p>
+				<input type="submit" name="submit" value="发送" />
+			</p>
+		</form>
+	</body>
+</html>

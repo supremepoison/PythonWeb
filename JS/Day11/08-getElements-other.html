@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1 id ='d1'>一级标题01</h1>
+		<h1 class="c1">一级标题02</h1>
+		<h1>一级标题03</h1>
+		<p id="d2">段落1</p>
+		<p class="c1">段落2</p>
+		<p>段落3</p>
+		<input type="text" name="uname" />
+		<input type="radio" name="gender" value="male" />male
+		
+		<script>
+			//根据id属性值获取元素节点
+			var h1 = document.getElementById('d1');
+			console.log(h1);
+			
+			//根据class属性值获取节点数组
+			var elems = document.getElementsByClassName('c1');
+			console.log(elems)
+			
+			//根据name属性获取表单元素
+			var inputs = document.getElementsByName('uname');
+			console.log(inputs,inputs[0]);
+		</script>
+		
+
+
+
+
+	</body>
+</html>

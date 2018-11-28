@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<a href="https://www.baidu.com">百度</a>
+		<button onclick="changeLink()">点击</button>
+		<script>
+			function changeLink(){
+				//1.获取元素节点
+				var alink = document.getElementsByTagName('a')[0];
+				//2.修改链接地址
+				alink.href = 'http://tmooc.cn';
+				//3.新建窗口打开文件
+				alink.target = '_blank';
+			}
+		</script>
+	</body>
+</html>

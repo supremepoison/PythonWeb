@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="jquery-1.11.3.js"></script>
+		<script>
+			window.onload = function(){
+				var h1=document.getElementsByTagName('h1')[0];
+				var $h1 = $('h1');
+				console.log('JS:',h1);
+				console.log('JQ:',$h1);
+				//原生对象使用原生方法,JQ对象使用JQ方法,不能混用
+				//html() - > innerHTML
+				// $h1.html("<a href='#' >超链接</a>");
+				//jq ->dom
+				var newH1 = $h1[0];
+				// newH1.innerHTML = "<a href='#' >超链接l</a>";
+
+				//dom -> jQ
+				var $newh1 = $(newH1);
+				$newh1.html("<a href='#' >超链接2</a>")
+			};
+		</script>
+	</head>
+	<body>
+		<h1>一级标题</h1>
+	</body>
+</html>

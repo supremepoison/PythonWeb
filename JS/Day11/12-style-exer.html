@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		用户名:
+		<input type="text" name="uname"/>
+		<button onclick="check()">按钮</button>
+		<div></div>
+		<script>
+			function initWithTagName(tagName){
+				//函数接受字符串参数
+				var elem = document.getElementsByTagName(tagName)[0];
+				return elem;
+			}
+			
+			
+			function check(){
+				//获取元素节点
+				var input = initWithTagName('input').value;		
+				var div = initWithTagName('div');
+				
+				if(input.length >=6 && input.length <= 18){
+					div.style.color = 'green';
+					//div.textContent = '合法';
+					div.innerHTML = '合法'
+					
+				}else{
+					div.style.color = 'red';
+					div.textContent = '不合法';
+
+				}
+				
+			}
+			
+		</script>
+	</body>
+</html>

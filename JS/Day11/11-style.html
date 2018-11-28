@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.c1{
+				color:red;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>一级标题</h1>
+		
+		<script>
+			//1.获取元素
+			var h1 = document.getElementsByTagName('h1')[0];
+			h1.className = 'c1';
+			console.log(h1.style);
+			//2.通过style属性添加
+			h1.style.backgroundColor = 'pink';
+			
+		</script>
+	</body>
+</html>

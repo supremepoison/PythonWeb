@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="jquery-1.11.3.js"></script>
+		
+	</head>
+	<body>
+		<input type="text" id="d1">
+		<input type="radio">啊哈
+		<button onclick="add()">点我</button>
+		<div>
+			
+		</div>
+		<script>
+			function add(){
+			
+		
+				var content = $('#d1').val();
+				
+				$('div').html('<h1>'+content+'</h1>');
+				$('div').attr('id','box');
+				$('div').removeAttr('id');
+				console.log($('div').attr('id'));
+				
+			}
+		</script>
+	</body>
+</html>
